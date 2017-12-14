@@ -9,7 +9,7 @@ import Login from '../ui/Login.js';
 
 
 const unauthenticatedPages=['/','/signup'];
-const anthenticatedPages=['links'];
+const anthenticatedPages=['/links'];
 
 //const browserHistory = createBrowserHistory();
 const onEnterPublicPage=()=>{
@@ -34,10 +34,9 @@ export const onAuthChange=(isAuthenticated)=>{
 };
 export const routes=(
   <Router history={browserHistory}>
-      <Route exact path="/" component={Login} onEnter={onEnterPublicPage}/>
+      <Route path="/" component={Login} onEnter={onEnterPublicPage}/>
       <Route path="/signup" component={Signup} onEnter={onEnterPublicPage}/>
       <Route path="/links" component={Links} onEnter={onEnterPrivatePage}/>
       <Route path="*" component={NotFound}/>
   </Router>
 );
-
